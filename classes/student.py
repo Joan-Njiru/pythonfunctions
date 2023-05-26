@@ -4,13 +4,14 @@
       #       - year_of_birth
        #      - show_initials
 class Student:
-    def __init__(self,first_name,last_name,age,country):
+    def __init__(self,first_name,last_name,age):
         self.first_name=first_name
         self.last_name=last_name
         self.age=age
-        self.country=country
+        self.country="good"
     def show_full_name(self):
-        return f"{self.first_name}+" "+{self.last_name}"
+        self.country="Kenya"
+        return f"{self.first_name} {self.country}"
     def year_of_birth(self):
         year=2023-self.age
         return f"Hello {self.name},you were born in {year}"
