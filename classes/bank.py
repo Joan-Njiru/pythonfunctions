@@ -20,7 +20,7 @@ class Bank:
         self.accNumber=accNumber
         self.userName=userName
         self.deposits=[]
-        self.withdrawls=withdrawals
+        self.withdrawals=[]
         self.loanBalance=0
     def checkbalance(self):
         return f"{self.balance}"
@@ -64,20 +64,24 @@ def borrow_loan(self,loan_amount):
 # A customer can repay a loan to reduce the current loan_balance
 # Overpayment of a loan increases the accounts current balance
 def repay_loan(self,amount):
-        self.loan_balance-=amount
+        
         if amount>self.loan_balance:
             extra=self.loan_balance-amount
             self.balance+=extra
+        else:
+             self.loan_balance-=amount
+             return "............."
 # Add a transfer method which accepts two attributes (amount and instance of another account).
 # If the amount is less than the current instances balance, the method transfers the requested amount from the
 # current account to the passed account. The transfer is accomplished by reducing the current account balance
 # and depositing the requested amount to the passed account.
 def transfer(self,amount,other_account):
+        if amount <=self.balance:
+             account.deposit(amount)
+             self.balance-=amount
         other_account=Account
-        if self.balance> amount:
-            return
-        self.balance -= amount
-        other_account.check_deposit(self,amount)
+else:
+return "Insufficient balance"
 
 
 
